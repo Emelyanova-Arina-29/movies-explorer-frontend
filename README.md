@@ -23,7 +23,7 @@
 
 **Ссылки**
 
-* [Ссылка на GitHub Pages](https://emelyanova-arina-29.github.io/movies-explorer-frontend)
+* [Ссылка на Репозиторий GitHub](https://github.com/Emelyanova-Arina-29/movies-explorer-frontend/tree/level-2)
 
 * [Макет Figma](https://disk.yandex.ru/d/HCFkutbDlWDNxQ)
 
