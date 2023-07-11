@@ -10,15 +10,15 @@
 Сайт сделан на основе макета, предоставленного в программе Figma. Все данные взяты оттуда, картинки экспортированы и оптимизированы.
 
 ### Список технологий
--CSS
--HTML
--JavaScript
--React
--Flexbox
--Grid Layout
--Webpack
--Адаптивная верстка
--PerfectPixel
+- CSS
+- HTML
+- JavaScript
+- React
+- Flexbox
+- Grid Layout
+- Webpack
+- Адаптивная верстка
+- PerfectPixel
 
 
 **Ссылки**
