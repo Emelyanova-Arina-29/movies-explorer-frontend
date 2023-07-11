@@ -1,0 +1,11 @@
+.saved-movies {
+  min-height: 58vh;
+  height: auto;
+  margin: 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .saved-movies {
+    min-height: 65vh;
+  }
+}

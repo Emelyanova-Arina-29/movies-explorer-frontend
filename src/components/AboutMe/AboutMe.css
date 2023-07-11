@@ -1,0 +1,181 @@
+.student {
+  background-color: #FFF;
+  color: #000;
+}
+
+.student__line {
+  border-bottom: #000000 1px solid;
+  margin: 0 70px;
+}
+
+.student__title {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: normal;
+  letter-spacing: -0.88px;
+  margin: 110px 0 23px 0;
+}
+
+.student__flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 66px 70px 101px 70px;
+}
+
+.student__text {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: normal;
+  letter-spacing: -0.88px;
+}
+
+.student__name {
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  letter-spacing: -2px;
+  margin: 0 0 18px 0;
+}
+
+.student__old {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  margin-bottom: 26px;
+}
+
+.student__description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 91px;
+  max-width: 600px;
+}
+
+.student__link {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: normal;
+  color: #000;
+  text-decoration: none;
+}
+
+.student__link:hover {
+  transition: opacity ease;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.student__photo {
+  width: 270px;
+  height: 327px;
+  object-fit: cover;
+  box-sizing: border-box;
+  background: cover no-repeat center;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .student__title {
+    margin-top: 90px;
+  }
+  
+  .student__link {
+    Letter-spacing: 0.01px
+  }
+
+  .student__line {
+    margin: 0 50px;
+  }
+
+  .student__name {
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -1.6px;
+    margin-bottom: 18px;
+  }
+  
+  .student__old {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 20px;
+    Letter-spacing: 0.04px
+  }
+
+  .student__description {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 80px;
+    max-width: 364px;
+    Letter-spacing: 0.01px
+  }
+
+  .student__photo {
+    width: 255px;
+    height: 307px;
+  }
+
+  .student__flex {
+    margin: 66px 50px 86px 50px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .student__name {
+    margin-top: 40px;
+  }
+
+  .student__flex {
+    flex-direction: column-reverse;
+    align-items: start;
+    margin: 66px 50px 101px;
+  }
+
+  .student__description {
+    margin-bottom: 32px;
+  }
+
+  .student__photo {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .student__title {
+    font-size: 18px;
+    letter-spacing: -0.72px;
+    margin: 70px 0 27px 0;
+  }
+  
+  .student__line {
+    margin: 0 14px;
+  }
+
+  .student__photo {
+    width: 292px;
+    height: 352px;
+  }
+  
+  .student__flex {
+    margin: 60px 14px 68px;
+  }
+
+  .student__name {
+    font-size: 30px;
+    line-height: normal;
+    letter-spacing: -1.2px;
+    margin-bottom: 20px;
+  }
+
+  .student__old {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .student__description {
+    font-size: 11px;
+    line-height: 16px;
+  }
+}
+
