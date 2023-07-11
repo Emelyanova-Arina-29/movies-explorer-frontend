@@ -1,0 +1,136 @@
+.navigation {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+
+  .navigation__overlay {
+    flex: 1 1 auto;
+  }
+
+  .navigation__menu {
+    box-sizing: border-box;
+    padding: 159px 90px 90px 90px;
+    width: 520px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    position: relative;
+  }
+
+  .navigation__button-close {
+    border: none;
+    background-color: transparent;
+    width: 22px;
+    height: 22px;
+    background-image: url("../../images/delete.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 66px;
+    position: absolute;
+    top: 27px;
+    right: 27px;
+  }
+
+  .navigation__button-close:hover {
+    transition: opacity ease;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  .navigation__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .navigation__link {
+    font-family: "Inter", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: normal;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .navigation__link:last-child {
+    margin-top: -2px;
+  }
+
+  .navigation__link:hover {
+    transition: opacity ease;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  .navigation__link_active {
+    padding-bottom: 3px;
+    border-bottom: 2px solid #000;
+  }
+
+  .navigation__account {
+    font-family: "Inter", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navigation__account:hover {
+    transition: opacity ease;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navigation__overlay {
+    display: none;
+  }
+
+  .navigation__menu {
+    padding: 144px 0 46px;
+    width: 100%;
+  }
+
+  .navigation__nav {
+    gap: 25px;
+  }
+
+  .navigation__button-close {
+    background-size: 55px;
+    top: 19px;
+    right: 18px;
+  }
+
+  .navigation__link_active {
+    padding-bottom: 6px;
+  }
+
+  .navigation__link:last-child {
+    margin-top: -8px;
+  }
+}

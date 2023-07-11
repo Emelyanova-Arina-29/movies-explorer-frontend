@@ -1,0 +1,169 @@
+.cards__list {
+  margin: 80px 0 0;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 270px);
+  row-gap: 39px;
+  column-gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  width: 270px;
+}
+
+.card__image {
+  box-sizing: border-box;
+  object-fit: cover;
+  width: 270px;
+  height: 151px;
+}
+
+.card__container {
+  margin: 5px 0 0;
+  padding-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: #E8E8E8 1px solid;
+}
+
+.card__title {
+  text-align: start;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+.card__like {
+  border: none;
+  background-color: #F9F9F9;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  background-image: url('../../images/like.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card__like:hover {
+  transition: opacity ease;
+  opacity: 0.8;
+  cursor: pointer;
+  background-image: url('../../images/like-active.svg');
+}
+
+.card__like_active {
+  background-image: url('../../images/like-active.svg');
+}
+
+.card__delete {
+  display: none;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.card__delete:hover {
+  transition: opacity ease;
+  opacity: 0.8;
+  cursor: pointer;
+  background-color: #F9F9F9;
+  background-image: url('../../images/delete.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card__delete_active {
+  background-color: #F9F9F9;
+  background-image: url('../../images/delete.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card__duration {
+  text-align: start;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: normal;
+  margin: 6px 0 0;
+  padding: 0;
+  color: #A0A0A0;
+}
+
+@media screen and (max-width: 768px) {
+  .card__image {
+    width: 339px;
+    height: 190px;
+  }
+
+  .cards__list {
+    margin: 80px 0 0;
+    grid-template-columns: repeat(auto-fit, 339px);
+    row-gap: 32px;
+    column-gap: 30px;
+  }
+
+  .card__container {
+    width: 339px;
+  }
+}
+
+@media screen and (max-width: 767.99px) {
+  .card__image {
+    width: 290px;
+  }
+
+  .cards__list {
+    grid-template-columns: repeat(auto-fit, 290px);
+  }
+
+  .card__container {
+    width: 290px;
+  }
+}
+
+@media screen and (max-width: 767.99px) {
+  .card__image {
+    width: 339px;
+  }
+
+  .cards__list {
+    grid-template-columns: repeat(auto-fit, 339px);
+  }
+
+  .card__container {
+    width: 339px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .card__image {
+    width: 300px;
+    height: 168px;
+  }
+
+  .cards__list {
+    margin: 50px 0 0;
+    row-gap: 35px;
+    grid-template-columns: repeat(auto-fit, 300px);
+  }
+
+  .card__container {
+    width: 300px;
+  }
+
+  .card__title {
+    font-size: 12px;
+  }
+
+  .card__duration {
+    font-size: 10px;
+  }
+}
