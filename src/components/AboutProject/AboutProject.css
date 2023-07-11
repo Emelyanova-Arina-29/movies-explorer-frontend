@@ -46,6 +46,7 @@
 .project__columns {
   display: flex;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .project__grid {
@@ -104,6 +105,7 @@
 
   .project__columns {
     margin: 0 ;
+    gap: 30px;
   }
   
   .project__line {
@@ -148,6 +150,7 @@
     flex-direction: column;
     margin: 0 18px;
     align-items: center;
+    gap: 0;
   }
 
   .project__column:first-child {

@@ -38,8 +38,8 @@ function MoviesCard() {
         </div>
         <p className="card__duration">1ч42м</p>
       </li>
-      {movies.map((movie) => (
-        <li className="card">
+      {movies.map((movie, index) => (
+        <li key={index} className="card">
           <img className="card__image" alt={`Обложка фильма`} src={movie.url} />
           <div className="card__container">
             <h2 className="card__title">{movie.title}</h2>
