@@ -62,7 +62,6 @@
 }
 
 .card__delete {
-  display: none;
   border: none;
   background-color: transparent;
   border-radius: 50%;

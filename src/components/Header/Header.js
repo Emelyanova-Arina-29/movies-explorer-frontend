@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
 
 import logo from "../../images/logo.svg";
@@ -7,8 +7,7 @@ import menu from "../../images/menu.svg";
 
 import "./Header.css";
 
-function Header() {
-  const location = useLocation();
+function Header({ isLoggedIn }) {
   const [isClicked, setIsClicked] = React.useState(false);
   
   function handleOpenMenu() {
@@ -19,23 +18,12 @@ function Header() {
     setIsClicked(false);
   }
 
-  const showMainHeader = () => {
-    const { pathname } = location;
-    return pathname === "/";
-  };
-
-  const showMovieHeader = () => {
-    const { pathname } = location;
-    return (
-      pathname === "/movies" ||
-      pathname === "/saved-movies" ||
-      pathname === "/profile"
-    );
-  };
+  const makeActive = ({ isActive }) =>
+    isActive ? "header__movie header__movie_active" : "header__movie";
 
   return (
     <>
-      {showMainHeader() && (
+      {!isLoggedIn ? (
         <header className="header">
           <Link to="/">
             <img className="header__logo" src={logo} alt="Логотип сайта" />
@@ -49,19 +37,19 @@ function Header() {
             </Link>
           </nav>
         </header>
-      )}
-      {showMovieHeader() && (
+      ) :
+       (
         <header className="header header_white">
           <Link to="/">
             <img className="header__logo" src={logo} alt="Логотип сайта" />
           </Link>
           <nav className="header__nav header__nav_margin">
-            <Link to="/movies" className="header__movie header__movie_active">
+            <NavLink to="/movies" className={makeActive}>
               Фильмы
-            </Link>
-            <Link to="/saved-movies" className="header__movie">
+            </NavLink>
+            <NavLink to="/saved-movies" className={makeActive}>
               Сохранённые фильмы
-            </Link>
+            </NavLink>
           </nav>
           <Link to="/profile" className="header__account">
             Аккаунт

@@ -5,39 +5,35 @@ import "./Entry.css";
 
 import logo from "../../images/logo.svg";
 
-function MainForm({ title, children, textButton, question, link, textLink }) {
+function Entry({
+  title,
+  children,
+  textButton,
+  question,
+  link,
+  isLoading,
+  textLink,
+  onSubmit,
+  isDisabled,
+}) {
+
   return (
     <section className="entry">
       <Link to="/">
         <img className="entry__logo" src={logo} alt="Логотип" />
       </Link>
       <h1 className="entry__title">{title}</h1>
-      <form className="form">
+      <form id="form" className="form" noValidate onSubmit={onSubmit}>
         {children}
-        <label className="form__label">
-          E-mail
-          <input
-            className="form__input"
-            name="email"
-            placeholder="Введите Ваш E-mail"
-            id="input-email"
-            type="email"
-            required
-          />
-        </label>
-        <label className="form__label">
-          Пароль
-          <input
-            className="form__input"
-            name="password"
-            placeholder="Введите пароль"
-            id="input-password"
-            type="password"
-            minLength="5"
-            required
-          />
-        </label>
-        <button className="form__button-submit" type="submit">
+        <button
+          className={
+            isDisabled || isLoading
+              ? "form__button-submit form__button-submit_disabled"
+              : "form__button-submit"
+          }
+          type="submit"
+          disabled={isDisabled ? true : false}
+        >
           {textButton}
         </button>
       </form>
@@ -51,4 +47,4 @@ function MainForm({ title, children, textButton, question, link, textLink }) {
   );
 }
 
-export default MainForm;
+export default Entry;

@@ -3,8 +3,8 @@
   color: #000;
   background-image: url('../../images/promo.svg');
   background-repeat: no-repeat;
-  background-position: 488px 254px;
-  background-size: 680px;
+  background-position: 490px 254px;
+  background-size: 720px;
   min-height: 556px;
 }
 
@@ -54,6 +54,7 @@
   .promo {
     background-position: center 540px;
     min-height: 840px;
+    background-size: 690px;
     display: flex;
     justify-content: center;
   }
