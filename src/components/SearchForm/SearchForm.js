@@ -1,20 +1,38 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
-import useForm from "../../hooks/useForm";
 
 import "./SearchForm.css";
 
-function SearchForm({
-  onSearchMovies,
-  shortFilms,
-  onFilterShortMovies
-}) {
-  const { values, errors, handleChange, isValid } = useForm();
+function SearchForm({ onSearchMovies, shortFilms, onFilterShortMovies }) {
+  const location = useLocation();
+
+  const [querySearch, setQuerySearch] = React.useState("");
+  const [isQuerySearchError, setIsQuerySearchError] = React.useState(false);
+
+  React.useEffect(() => {
+    if (
+      localStorage.getItem("movieSearch") &&
+      location.pathname === "/movies"
+    ) {
+      const saveQuery = localStorage.getItem("movieSearch");
+      setQuerySearch(saveQuery);
+    }
+  }, [location]);
 
   function handleSubmit(e) {
     e.preventDefault();
-    onSearchMovies(values.query);
+    if (querySearch.trim().length === 0) {
+      setIsQuerySearchError(true);
+    } else {
+      setIsQuerySearchError(false);
+      onSearchMovies(querySearch);
+    }
+  }
+
+  function changeQueryInput(e) {
+    setQuerySearch(e.target.value);
   }
 
   return (
@@ -25,22 +43,18 @@ function SearchForm({
             className="search__input"
             name="query"
             type="text"
-            value={values.query || ""}
-            onChange={handleChange}
+            value={querySearch || ""}
+            onChange={changeQueryInput}
             required
             placeholder="Фильм"
           ></input>
-          <span className="search__error">
-            {errors.query ? "Нужно ввести ключевое слово" : ""}
-          </span>
+          {isQuerySearchError && (
+            <span className="search__error">Нужно ввести ключевое слово</span>
+          )}
         </label>
         <div className="search__container">
           <div className="search__line">
-            <button
-              className="search__button"
-              type="submit"
-              disabled={!isValid}
-            ></button>
+            <button className="search__button" type="submit"></button>
           </div>
           <FilterCheckbox
             shortFilms={shortFilms}
