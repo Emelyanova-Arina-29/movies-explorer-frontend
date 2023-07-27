@@ -17,7 +17,6 @@ function MoviesCardList({
   isEmptyList,
 }) {
   const { pathname } = useLocation();
-  console.log(savedMovies, "в карточке")
   const [showListMovies, setShowListMovies] = React.useState(0);
 
   function showMovie() {
@@ -79,10 +78,10 @@ function MoviesCardList({
                     liked={getSavedMovie(savedMovies, card)}
                     cards={cards}
                     card={card}
-                    isSavedFilms={isSavedFilms}
-                    onLikeFilm={onLikeMovie}
-                    onDeleteFilm={onDeleteMovie}
                     savedMovies={savedMovies}
+                    isSavedFilms={isSavedFilms}
+                    onDeleteFilm={onDeleteMovie}
+                    onLikeFilm={onLikeMovie}
                   />
                 ))}
               </ul>
@@ -96,15 +95,18 @@ function MoviesCardList({
                     liked={getSavedMovie(savedMovies, card)}
                     cards={cards}
                     card={card}
-                    isSavedFilms={isSavedFilms}
-                    onLikeFilm={onLikeMovie}
-                    onDeleteFilm={onDeleteMovie}
                     savedMovies={savedMovies}
+                    isSavedFilms={isSavedFilms}
+                    onDeleteFilm={onDeleteMovie}
+                    onLikeFilm={onLikeMovie}
                   />
                 ))}
               </ul>
               {cards.length > showListMovies ? (
-                <div className="cards__container-button" onClick={showMoreMovie}>
+                <div
+                  className="cards__container-button"
+                  onClick={showMoreMovie}
+                >
                   <button className="cards__button" type="button">
                     Ещё
                   </button>

@@ -158,6 +158,10 @@
     margin: auto auto 0;
   }
   
+  .form__error {
+    width: 260px;
+  }
+  
   .form__input {
     width: 245px;
   }

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 import "./App.css";
 
@@ -24,6 +24,7 @@ import imageCross from "../../images/cross.svg";
 
 function App() {
   const navigate = useNavigate();
+  const path = useLocation().pathname;
 
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [currentUser, setCurrentUser] = React.useState({});
@@ -44,7 +45,7 @@ function App() {
         .then((res) => {
           if (res) {
             setIsLoggedIn(true);
-            navigate("/movies");
+            navigate(path);
           }
         })
         .catch((err) => console.log(`Произошла ошибка: ${err}`));
@@ -84,7 +85,7 @@ function App() {
       .then((res) => {
         localStorage.setItem("jwt", res.token);
         setIsLoggedIn(true);
-        navigate("/movies");
+        navigate("./movies");
       })
       .catch(() => {
         setPopupStatus({
@@ -126,22 +127,17 @@ function App() {
       mainApi
         .getUsersMovies()
         .then((data) => {
-          console.log(data, "data в стейте");
-          setSavedMovies(Object.entries(data));
+          setSavedMovies(data.movies);
         })
         .catch((err) => console.log(`Произошла ошибка: ${err}`));
     }
   }, [isLoggedIn]);
 
-  console.log(savedMovies, "после стейта");
-
   function handleSaveMovie(card) {
     mainApi
       .saveMovie(card)
       .then((newMovie) => {
-        console.log(newMovie, "новая карточка");
         setSavedMovies([newMovie.movie, ...savedMovies]);
-        console.log(savedMovies, "savedMovies новая карточка");
       })
       .catch((err) => console.log(`Произошла ошибка: ${err}`));
   }

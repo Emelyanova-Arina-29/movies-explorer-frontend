@@ -6,7 +6,6 @@ export function useForm() {
   const [isValid, setIsValid] = React.useState(false);
 
   const handleChange = (event) => {
-    
     const name = event.target.name;
     const value = event.target.value;
 

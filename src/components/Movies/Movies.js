@@ -8,7 +8,6 @@ import { filterShortMovies, filterMovies } from "../../utils/filterMovies";
 import "./Movies.css";
 
 function Movies({ savedMovies, onDeleteMovie, onLikeMovie }) {
-
   const [allMovies, setAllMovies] = React.useState([]);
   const [shortFilms, setShortFilms] = React.useState(false);
   const [filteredMovies, setFilteredMovies] = React.useState([]);
@@ -65,7 +64,7 @@ function Movies({ savedMovies, onDeleteMovie, onLikeMovie }) {
     }
   }
 
-  // Эффекты 
+  // Эффекты
 
   React.useEffect(() => {
     if (localStorage.getItem("movieSearch")) {

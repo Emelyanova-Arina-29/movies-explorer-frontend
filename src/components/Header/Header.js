@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
 
 import logo from "../../images/logo.svg";
@@ -8,8 +8,9 @@ import menu from "../../images/menu.svg";
 import "./Header.css";
 
 function Header({ isLoggedIn }) {
+  const { pathname } = useLocation();
   const [isClicked, setIsClicked] = React.useState(false);
-  
+
   function handleOpenMenu() {
     setIsClicked(true);
   }
@@ -23,7 +24,7 @@ function Header({ isLoggedIn }) {
 
   return (
     <>
-      {!isLoggedIn ? (
+      {!isLoggedIn && (
         <header className="header">
           <Link to="/">
             <img className="header__logo" src={logo} alt="Логотип сайта" />
@@ -37,8 +38,34 @@ function Header({ isLoggedIn }) {
             </Link>
           </nav>
         </header>
-      ) :
-       (
+      )}
+      {isLoggedIn && pathname === "/" && (
+        <header className="header">
+          <Link to="/">
+            <img className="header__logo" src={logo} alt="Логотип сайта" />
+          </Link>
+          <nav className="header__nav header__nav_margin">
+            <NavLink to="/movies" className={makeActive}>
+              Фильмы
+            </NavLink>
+            <NavLink to="/saved-movies" className={makeActive}>
+              Сохранённые фильмы
+            </NavLink>
+          </nav>
+          <Link to="/profile" className="header__account">
+            Аккаунт
+          </Link>
+          <button
+            className="header__menu"
+            type="button"
+            onClick={handleOpenMenu}
+          >
+            <img className="header__menu-img" src={menu} alt="меню" />
+          </button>
+          {isClicked ? <Navigation handleClose={handleCloseMenu} /> : ""}
+        </header>
+      )}
+      {isLoggedIn && !(pathname === "/") && (
         <header className="header header_white">
           <Link to="/">
             <img className="header__logo" src={logo} alt="Логотип сайта" />
@@ -55,13 +82,13 @@ function Header({ isLoggedIn }) {
             Аккаунт
           </Link>
           <button
-              className="header__menu"
-              type="button"
-              onClick={handleOpenMenu}
-            >
-              <img className="header__menu-img" src={menu} alt="меню" />
-            </button>
-            {isClicked ? <Navigation handleClose={handleCloseMenu} /> : ""}
+            className="header__menu"
+            type="button"
+            onClick={handleOpenMenu}
+          >
+            <img className="header__menu-img" src={menu} alt="меню" />
+          </button>
+          {isClicked ? <Navigation handleClose={handleCloseMenu} /> : ""}
         </header>
       )}
     </>

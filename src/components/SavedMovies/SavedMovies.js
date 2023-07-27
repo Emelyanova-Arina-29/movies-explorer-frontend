@@ -1,6 +1,6 @@
 import React from "react";
-import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
+import SearchForm from "../SearchForm/SearchForm";
 import { filterShortMovies, filterMovies } from "../../utils/filterMovies";
 
 import "./SavedMovies.css";

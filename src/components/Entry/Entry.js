@@ -16,7 +16,6 @@ function Entry({
   onSubmit,
   isDisabled,
 }) {
-
   return (
     <section className="entry">
       <Link to="/">

@@ -1,4 +1,4 @@
-import { MOVIES_URL } from './constants';
+import { MOVIES_URL } from "./constants";
 
 const handleResponse = (res) => {
   if (res.ok) {

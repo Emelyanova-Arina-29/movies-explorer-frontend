@@ -23,9 +23,9 @@
 
 **Ссылки**
 
-* [Ссылка на Frontend](https://movies.arina.nomoreparties.sbs)
+* [Ссылка на задеплоенный на сервере проект](https://movies.arina.nomoreparties.sbs)
  
-* [Ссылка на Репозиторий GitHub](https://github.com/Emelyanova-Arina-29/movies-explorer-frontend/tree/level-2)
+* [Ссылка на Репозиторий GitHub](https://github.com/Emelyanova-Arina-29/movies-explorer-frontend/tree/level-3)
 
 * [Макет Figma](https://disk.yandex.ru/d/HCFkutbDlWDNxQ)
 

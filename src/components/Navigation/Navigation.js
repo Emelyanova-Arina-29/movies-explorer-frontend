@@ -1,9 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import "./Navigation.css";
 
 function Navigation({ handleClose }) {
+  const isActiveLink = ({ isActive }) =>
+    isActive ? "navigation__link navigation__link_active" : "navigation__link";
+
   return (
     <div className="navigation">
       <div className="navigation__overlay"></div>
@@ -14,20 +17,25 @@ function Navigation({ handleClose }) {
           type="button"
         ></button>
         <nav className="navigation__nav">
-          <Link to="/" className="navigation__link">
+          <NavLink to="/" className={isActiveLink} onClick={handleClose}>
             Главная
-          </Link>
-          <Link
-            to="/movies"
-            className="navigation__link navigation__link_active"
-          >
+          </NavLink>
+          <NavLink to="/movies" className={isActiveLink} onClick={handleClose}>
             Фильмы
-          </Link>
-          <Link to="/saved-movies" className="navigation__link">
+          </NavLink>
+          <NavLink
+            to="/saved-movies"
+            className={isActiveLink}
+            onClick={handleClose}
+          >
             Сохранённые фильмы
-          </Link>
+          </NavLink>
         </nav>
-        <Link to="/profile" className="navigation__account">
+        <Link
+          to="/profile"
+          className="navigation__account"
+          onClick={handleClose}
+        >
           Аккаунт
         </Link>
       </div>
