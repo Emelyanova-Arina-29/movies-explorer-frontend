@@ -29,4 +29,6 @@
 
 * [Макет Figma](https://disk.yandex.ru/d/HCFkutbDlWDNxQ)
 
+* [Ссылка на пул реквест](https://github.com/Emelyanova-Arina-29/movies-explorer-frontend/pull/2)
+
 
