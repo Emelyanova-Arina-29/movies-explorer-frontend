@@ -35,7 +35,7 @@ function App() {
     image: "",
     meassage: "",
   });
-  
+
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");
     if (jwt) {
@@ -126,21 +126,22 @@ function App() {
       mainApi
         .getUsersMovies()
         .then((data) => {
-          console.log(data, 'data в стейте')
+          console.log(data, "data в стейте");
           setSavedMovies(Object.entries(data));
         })
         .catch((err) => console.log(`Произошла ошибка: ${err}`));
     }
   }, [isLoggedIn]);
 
-  console.log(savedMovies, 'после стейта')
+  console.log(savedMovies, "после стейта");
 
   function handleSaveMovie(card) {
     mainApi
       .saveMovie(card)
       .then((newMovie) => {
-        console.log(newMovie, 'новая карточка')
-        setSavedMovies([newMovie, ...savedMovies]);
+        console.log(newMovie, "новая карточка");
+        setSavedMovies([newMovie.movie, ...savedMovies]);
+        console.log(savedMovies, "savedMovies новая карточка");
       })
       .catch((err) => console.log(`Произошла ошибка: ${err}`));
   }
