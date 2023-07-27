@@ -1,7 +1,9 @@
+import { DURATION_SHORT_FILM } from "./constants";
+
 // Функция фильтрации короткометражек
 
 export function filterShortMovies(movies) {
-  return movies.filter((item) => item.duration < 40);
+  return movies.filter((item) => item.duration < DURATION_SHORT_FILM);
 }
 
 // Функция пересчета времени

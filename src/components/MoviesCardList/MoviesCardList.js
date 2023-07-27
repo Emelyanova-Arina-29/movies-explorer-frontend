@@ -1,6 +1,12 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 
+import {
+  DECKTOP_SHOW_MORE_MOVIES,
+  TABLET_SHOW_MORE_MOVIES,
+  MOBILE_SHOW_MORE_MOVIES,
+} from "../../utils/constants";
+
 import MoviesCard from "../MoviesCard/MoviesCard";
 import Preloader from "../Preloader/Preloader";
 
@@ -33,11 +39,11 @@ function MoviesCardList({
   function showMoreMovie() {
     const display = window.innerWidth;
     if (display > 1279) {
-      setShowListMovies(showListMovies + 4);
+      setShowListMovies(showListMovies + DECKTOP_SHOW_MORE_MOVIES);
     } else if (display > 990) {
-      setShowListMovies(showListMovies + 3);
+      setShowListMovies(showListMovies + TABLET_SHOW_MORE_MOVIES);
     } else {
-      setShowListMovies(showListMovies + 2);
+      setShowListMovies(showListMovies + MOBILE_SHOW_MORE_MOVIES);
     }
   }
 
