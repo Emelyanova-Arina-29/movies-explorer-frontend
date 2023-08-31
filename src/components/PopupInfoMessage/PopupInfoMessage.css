@@ -1,0 +1,97 @@
+.popup {
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s linear;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+}
+
+.popup_opened {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.popup__container {
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: 430px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.popup__close {
+  background-color: transparent;
+  background-image: url("../../images/delete.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border: none;
+  top: -45px;
+  right: -40px;
+  box-sizing: border-box;
+  object-fit: cover;
+}
+
+.popup__close:hover {
+  transition: opacity ease;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.popup__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup__picture {
+  width: 120px;
+  height: 120px;
+  margin: 60px 0 32px;
+}
+
+.popup__message {
+  max-width: 358px;
+  font-family: inherit;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000;
+  margin: 0 0 60px;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .popup__container {
+    max-width: 282px;
+  }
+
+  .popup__close {
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    top: -35px;
+    right: 0;
+  }
+
+  .popup__message {
+    max-width: 244px;
+  }
+}
